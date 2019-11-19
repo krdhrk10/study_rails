@@ -1,4 +1,4 @@
-# Ruby on Rails Tutorail
+# Ruby on Rails Tutorial
 
 ## Environment
 - ruby : 2.6.5
@@ -19,7 +19,7 @@ $ docker-compose up -d
 ```
 $ cd /srv/blog
 $ bundle init
-$ bundle install --path vendor/bundle
+$ bundle install
 $ bundle exec rails new . -B -d mysql --skip-turbolinks --skip-test
 $ bundle exec rails webpacker:install
 $ vi config/database.yml
@@ -29,4 +29,5 @@ $ vi config/database.yml
 ## Note
 - railsは内部的にwebpackを使用しており、nodejs、yarnに依存している
 - bundle exec xxx でGemfileの依存を見ながらrailsコマンドを実行するのが吉
-
+- bundle install --path vendor/bundle が主流っぽいが、今回はdockerコンテナ内でglobal汚染もあまり関係ないので気にしない
+- nodejsとyarn入ってないと起動しないとかちょっと勘弁してほしい
